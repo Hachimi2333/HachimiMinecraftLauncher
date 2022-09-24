@@ -1,6 +1,6 @@
 # HachimiMinecraftLauncher
 
-[![](https://img.shields.io/badge/V%20ME-50-red?style=for-the-badge&logo=kfc&logoColor=red)](https://baidu.com)
+[![](https://img.shields.io/badge/V%20ME-50-red?style=for-the-badge&logo=kfc&logoColor=red)]()
 
 ***
 
@@ -12,7 +12,7 @@
 
 - 下载优化
 - 微软登录
-- Hachimi账号接入
+- 账号系统接入
 
 ## 下载
 
