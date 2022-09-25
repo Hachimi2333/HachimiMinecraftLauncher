@@ -16,7 +16,9 @@
 
 ## 下载
 
-尚未发布**正式版本**，暂无release
+[Release](https://github.com/Hachimi2333/HachimiMinecraftLauncher/releases)
+
+！Alpha版本可能存在漏洞
 
 ## 注意事项
 
