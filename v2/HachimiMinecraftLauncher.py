@@ -1,4 +1,5 @@
 ﻿
+from tkinter import ttk
 import minecraft_launcher_lib
 from tkinter import *
 from tkinter.messagebox import *
@@ -10,7 +11,6 @@ import sys
 import os
 import uuid
 import multiprocessing
-import sv_ttk
 
 
 os.makedirs(".minecraft", exist_ok=True)
@@ -52,13 +52,12 @@ def Login():
     Loginpage.title("登录账号")
     width = 400
     height = 230
-    screenwidth = root.winfo_screenwidth()
-    screenheight = root.winfo_screenheight()
+    screenwidth = Loginpage.winfo_screenwidth()
+    screenheight = Loginpage.winfo_screenheight()
     geometry = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
     Loginpage.geometry(geometry)
     Loginpage.resizable(width=False, height=False)
     Loginpage.iconbitmap('assets/icon.ico')
-    sv_ttk.set_theme("light")
 
     PlayerNameinfo = Label(Loginpage,text="昵称",font=('幼圆',15))
     PlayerNameinfo.place(x=10, y=30, width=100, height=30)
@@ -114,13 +113,12 @@ def HachimiPlaza():
     HachimiPlaza.title("Hachimi Plaza 广场")
     width = 800
     height = 460
-    screenwidth = root.winfo_screenwidth()
-    screenheight = root.winfo_screenheight()
+    screenwidth = HachimiPlaza.winfo_screenwidth()
+    screenheight = HachimiPlaza.winfo_screenheight()
     geometry = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
     HachimiPlaza.geometry(geometry)
     HachimiPlaza.resizable(width=False, height=False)
     HachimiPlaza.iconbitmap('assets/icon.ico')
-    sv_ttk.set_theme("light")
 
     infosource = Label(HachimiPlaza,text="下载源",font=('幼圆',15))
     infosource.place(x=10, y=10, width=80, height=40)
@@ -159,7 +157,6 @@ def HachimiPlaza():
     downtip.place(x=10, y=420, width=780, height=30)
 
 
-
 def LaunchGame():
     if (LoginType["text"]=="未登录?"):
         showwarning("提示","您未登录")
@@ -177,6 +174,8 @@ def LaunchGame():
             minecraft_command = minecraft_launcher_lib.command.get_minecraft_command(GameVersion.get(),
                                                                                      minecraft_directory,
                                                                                      options)
+            #Launch_process = multiprocessing.Process(target=subprocess.call(minecraft_command))
+            #Launch_process.start()
             subprocess.call(minecraft_command)
 
 
@@ -190,7 +189,6 @@ geometry = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenhei
 root.geometry(geometry)
 root.resizable(width=False, height=False)
 root.iconbitmap('assets/icon.ico')
-sv_ttk.set_theme("light")
 
 #Background = PhotoImage(file=r"assets/bg.gif")
 #Bg = Label(text="Background",image=Background)
